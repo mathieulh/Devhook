@@ -1,0 +1,29 @@
+#
+#devicehook API lib for devkitPSP7
+#
+TARGET_LIB = ../lib/libdevhooku.a
+
+OBJS = \
+ dhAPI_0000.o\
+ dhAPI_0001.o\
+ dhAPI_0002.o\
+ dhAPI_0003.o\
+ dhAPI_0004.o\
+ dhAPI_0005.o\
+ dhAPI_0100.o\
+ dhAPI_0101.o\
+ dhAPI_0102.o\
+
+USE_KERNEL_LIBC = 1
+
+INCDIR = 
+CFLAGS = -O2 -G0 -Wall
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+PSPSDK=$(shell psp-config --pspsdk-path)
+include $(PSPSDK)/lib/build.mak
+
+$(OBJS): dhAPI.S
+	$(CC) -DF_$* $< -c -o $@
+

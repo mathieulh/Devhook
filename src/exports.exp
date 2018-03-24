@@ -1,0 +1,58 @@
+# Define the exports for the prx
+PSP_BEGIN_EXPORTS
+
+# These four lines are mandatory (although you can add other functions like module_stop)
+# syslib is a psynonym for the single mandatory export.
+PSP_EXPORT_START(syslib, 0, 0x8000)
+#PSP_EXPORT_FUNC_HASH(StartModule)
+PSP_EXPORT_FUNC_HASH(module_start)
+PSP_EXPORT_VAR_HASH(module_info)
+PSP_EXPORT_END
+
+# Config for addin driver
+PSP_EXPORT_START(DHRegistryForKernel, 0, 0x0001)
+PSP_EXPORT_FUNC_HASH(dhGetRegistry)
+PSP_EXPORT_FUNC_HASH(dhSetRegistry)
+PSP_EXPORT_END
+
+PSP_EXPORT_START(DHRegistryForUser, 0, 0x4001)
+PSP_EXPORT_FUNC_HASH(dhGetRegistry)
+PSP_EXPORT_FUNC_HASH(dhSetRegistry)
+PSP_EXPORT_END
+
+# Export our function
+PSP_EXPORT_START(DevHookForKernel, 0, 0x0001)
+PSP_EXPORT_FUNC_HASH(dhGetVersion)
+
+PSP_EXPORT_FUNC_HASH(dhUMDAddDevice)
+PSP_EXPORT_FUNC_HASH(dhUMDDelDevice)
+
+PSP_EXPORT_FUNC_HASH(dhReadFileRetry)
+PSP_EXPORT_FUNC_HASH(dhWriteFileRetry)
+PSP_EXPORT_FUNC_HASH(dhCloseFile)
+
+PSP_EXPORT_FUNC_HASH(dhUMDMount)
+PSP_EXPORT_FUNC_HASH(dhUMDUnmount)
+
+PSP_EXPORT_FUNC_HASH(dhCLKSet)
+
+PSP_EXPORT_END
+
+# Export our function
+PSP_EXPORT_START(DevHookForUser, 0, 0x4001)
+PSP_EXPORT_FUNC_HASH(dhGetVersion)
+
+PSP_EXPORT_FUNC_HASH(dhReadFileRetry)
+PSP_EXPORT_FUNC_HASH(dhWriteFileRetry)
+PSP_EXPORT_FUNC_HASH(dhCloseFile)
+
+PSP_EXPORT_FUNC_HASH(dhUMDMount)
+PSP_EXPORT_FUNC_HASH(dhUMDUnmount)
+
+#PSP_EXPORT_FUNC_HASH(dhBootRebootVSH)
+#PSP_EXPORT_FUNC_HASH(dhBootRebootUMD)
+#PSP_EXPORT_FUNC_HASH(dhBootRebootMS)
+
+PSP_EXPORT_END
+
+PSP_END_EXPORTS
