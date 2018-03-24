@@ -1,4 +1,4 @@
-devhook—p‚Ìƒ‰ƒCƒuƒ‰ƒŠ‚Å‚·
+devhookç”¨ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã§ã™
 
 libdevhook.a  : for kernel module
 libdevhooku.a : for user module
