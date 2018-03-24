@@ -7,9 +7,8 @@ All credits go to BOOSTER.
 
 Contact information: https://twitter.com/Mathieulh
 
+---------------------------------------------
 
-
-230/5000
 これらは、Devhookバージョン0.52のソースです。
 
 Devhookは、パッチ適用されたバージョンのreboot.binを実行してpspのファームウェアをブートストラップすることができます。
